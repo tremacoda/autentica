@@ -1,6 +1,6 @@
 <?php
 class Employee {
-	private $code;
+	protected $code;
 	function setCode($code) {
 		if ($code == "") {
 			echo "Name cannot be blank!";
@@ -32,7 +32,7 @@ class Student extends Employee implements Person {
 		$this->name = $name;
 		$this->lastname = $lastname;
 	}
-    function setCode($code,$prefix) {
+    function setCode($code,$prefix="") {
 		
 			$this->code =$prefix."/".$code;
 		}
@@ -40,6 +40,6 @@ class Student extends Employee implements Person {
 $student = new Student();
 $student->setName( "Giulia", "Q" );
 $student->getName();
-$student->setCode("04022012","Plz.");
+$student->setCode("04022","Plz: ");
 $student->getCode();
 ?>
